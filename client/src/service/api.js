@@ -3,7 +3,7 @@ import axios from 'axios';
 const url = 'https://mern-clone-website.vercel.app';
 //const url = 'http://localhost:8000';
 export const authenticateLogin = async (user) => {
-    try {
+    try { 
         return await axios.post(`${url}/login`, user);
     } catch (error) {
         console.log('Error while calling login API: ', error);
