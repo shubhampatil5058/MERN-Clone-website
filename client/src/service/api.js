@@ -1,7 +1,7 @@
 import axios from 'axios';
 
-const url = 'https://mern-clone-website.vercel.app';
-//const url = 'http://localhost:8000';
+const url = 'mern-clone-website-1be0be8dr-shubhampatil5058s-projects.vercel.app';
+
 export const authenticateLogin = async (user) => {
     try { 
         return await axios.post(`${url}/login`, user);
