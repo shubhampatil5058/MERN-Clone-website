@@ -25,19 +25,3 @@ app.use(bodyParser.json({ extended: true }));
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(cors());
 app.use('/', Routes);
-
-module.exports = {
-    paytmMerchantkey: process.env.PAYTM_MERCHANT_KEY,
-    paytmParams: {
-        MID: process.env.PAYTM_MID,
-        WEBSITE: process.env.PAYTM_WEBSITE,
-        CHANNEL_ID: process.env.PAYTM_CHANNEL_ID,
-        INDUSTRY_TYPE_ID: process.env.PAYTM_INDUSTRY_TYPE_ID,
-        ORDER_ID: uuid(),
-        CUST_ID: process.env.PAYTM_CUST_ID,
-        TXN_AMOUNT: '100',
-        CALLBACK_URL: 'http://localhost:8000/callback',
-        EMAIL: 'kunaltyagi@gmail.com',
-        MOBILE_NO: '1234567852'
-    }
-};
