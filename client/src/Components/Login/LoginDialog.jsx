@@ -3,7 +3,7 @@ import React, { useState, useEffect } from 'react';
 import { Dialog, DialogContent, TextField, Box, Button, Typography, styled } from '@mui/material';
 
 import { authenticateLogin, authenticateSignup } from '../../service/api';
-
+ 
 const Component = styled(DialogContent)`
     height: 70vh;
     width: 90vh;
