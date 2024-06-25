@@ -1,27 +1,38 @@
 import axios from 'axios';
 
-const url = 'mern-clone-website-1be0be8dr-shubhampatil5058s-projects.vercel.app';
+const baseURL = 'https://mern-clone-website.vercel.app'; 
+
+const api = axios.create({
+  baseURL: baseURL,
+  timeout: 10000, // Timeout set to 10 seconds
+});
 
 export const authenticateLogin = async (user) => {
-    try { 
-        return await axios.post(`${url}/login`, user);
-    } catch (error) {
-        console.log('Error while calling login API: ', error);
-    }
-}
+  try {
+    const response = await api.post('/login', user);
+    return response.data;
+  } catch (error) {
+    console.error('Error while calling login API:', error);
+    throw error; // Rethrow or handle the error as needed
+  }
+};
 
 export const authenticateSignup = async (user) => {
-    try {
-        return await axios.post(`${url}/signup`, user);
-    } catch (error) {
-        console.log('Error while calling Signup API: ', error);
-    }
-}
+  try {
+    const response = await api.post('/signup', user);
+    return response.data;
+  } catch (error) {
+    console.error('Error while calling Signup API:', error);
+    throw error;
+  }
+};
 
 export const getProductById = async (id) => {
-    try {
-        return await axios.get(`${url}/product/${id}`);
-    } catch (error) {
-        console.log('Error while getting product by id response', error);
-    }
-}
+  try {
+    const response = await api.get(`/product/${id}`);
+    return response.data;
+  } catch (error) {
+    console.error('Error while getting product by id response:', error);
+    throw error;
+  }
+};
