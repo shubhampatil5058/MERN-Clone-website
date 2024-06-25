@@ -4,6 +4,5 @@
     { "src": "/api/login", "dest": "/api/login.js" },
     { "src": "/api/signup", "dest": "/api/signup.js" },
     { "src": "/api/product/:id", "dest": "/api/product.js" }
-
   ]
 }
