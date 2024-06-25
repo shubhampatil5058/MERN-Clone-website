@@ -1,12 +1,23 @@
 {
-  "functions": {
-    "api/*": {
-      "handler": "api/server.js",
-      "runtime": "@vercel/node"
+  "version": 2,
+  "builds": [
+    {
+      "src": "client/**",
+      "use": "@vercel/static-build"
+    },
+    {
+      "src": "server/index.js",
+      "use": "@vercel/node"
     }
-  },
+  ],
   "routes": [
-    { "src": "/api/(.*)", "dest": "api/$1" },
-    { "src": "/(.*)", "dest": "api/server.js" }
+    {
+      "src": "/api/(login|signup|product)/(.*)",
+      "dest": "server/index.js"
+    },
+    {
+      "src": "/(.*)",
+      "dest": "/client/index.html"
+    }
   ]
 }
