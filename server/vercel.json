@@ -1,23 +1,9 @@
 {
   "version": 2,
-  "builds": [
-    {
-      "src": "client/**",
-      "use": "@vercel/static-build"
-    },
-    {
-      "src": "server/index.js",
-      "use": "@vercel/node"
-    }
-  ],
   "routes": [
-    {
-      "src": "/api/(login|signup|product)/(.*)",
-      "dest": "server/index.js"
-    },
-    {
-      "src": "/(.*)",
-      "dest": "/client/index.html"
-    }
+    { "src": "/api/login", "dest": "/api/login.js" },
+    { "src": "/api/signup", "dest": "/api/signup.js" },
+    { "src": "/api/product/:id", "dest": "/api/product.js" }
+    // Add other routes as necessary
   ]
 }
